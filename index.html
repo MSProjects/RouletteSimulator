@@ -1,0 +1,71 @@
+<head>
+    <link rel="stylesheet" href="css/wave-styles.css">
+    <link rel="stylesheet" href="css/generic-styles.css">
+    <link rel="stylesheet" href="css/input-styles.css">
+    <link rel="stylesheet" href="css/custom-styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="header">
+
+        <!--Content before waves-->
+        <div class="inner-header flex mb-3">
+
+            <div class="p-relative mb-3">
+                <svg class="logo" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M18,3A2,2 0 0,1 20,5C20,5.81 19.5,6.5 18.83,6.82L17,13.15V18H7V13.15L5.17,6.82C4.5,6.5 4,5.81 4,5A2,2 0 0,1 6,3A2,2 0 0,1 8,5C8,5.5 7.82,5.95 7.5,6.3L10.3,9.35L10.83,5.62C10.33,5.26 10,4.67 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.67 13.67,5.26 13.17,5.62L13.7,9.35L16.47,6.29C16.18,5.94 16,5.5 16,5A2,2 0 0,1 18,3M5,20H19V22H5V20Z" />
+                </svg>
+                <h1>Roulette Simulator</h1>
+            </div>
+
+            <div class="control-form">
+                <div class="alert alert-danger" id="inputs-alert">
+                    Unable to play, try again with other values
+                </div>
+                <span class="balloon-span">
+                    <input class="balloon b1" id="bet" type="number" placeholder="0.1" min="0.1" max="10" step="0.1"/><label for="bet">Bet</label>
+                </span>
+                <span class="balloon-span">
+                    <input class="balloon b2" id="wins" type="number" placeholder="10" min="1" max="500"/><label for="wins">Wins</label>
+                </span>
+                <span class="balloon-span">
+                    <input class="balloon b3" id="double" type="number" placeholder="18" min="1" max="36"/><label for="double">Double every...</label>
+                </span>
+                <span class="balloon-span">
+                    <input class="balloon b3" id="chosen-number" type="number" placeholder="13" min="1" max="36"/><label for="chosen-number">Chosen number</label>
+                </span>
+                <a class="button" onClick="playRouletteMultipleTimes()">PLAY</a>
+            </div>
+            
+
+        </div>
+        
+
+        <!--Waves Container-->
+        <div>
+
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+
+
+            <p class="bg-white m-0 p-8" id="result">Result will be here</p>
+            
+
+        </div>
+        <!--Waves end-->
+        
+    </div>
+</body>
+
+<script src="js/roulette.js"></script>

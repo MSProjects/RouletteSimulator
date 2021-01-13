@@ -1,0 +1,58 @@
+.control-form {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin-bottom: 2em;
+}
+
+.button {
+    background: #0DE093;
+    padding: 20px 8px;
+    border-bottom: 4px solid #15ac74;
+    border-radius: 4px;
+    margin: 15px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3em;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: 250ms;
+}
+
+.button:hover {
+    filter:brightness(1.04);
+    transform: scale(1.04);
+    border-bottom-width: 0;
+}
+
+#result {
+    font-size:1.1em;
+}
+
+@media only screen and (max-width: 1600px) {
+    .control-form {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .control-form {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .control-form {
+        width: 80%;
+        margin-bottom: 1em;
+    }
+    h1 {
+        margin: 15px 0;
+    }
+    .alert, .button, .balloon-span {
+        margin: 10px;
+    }
+    .p-8 {
+        padding: 3em 1.5em;
+    }
+    
+}

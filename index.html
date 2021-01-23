@@ -2,11 +2,12 @@
     <link rel="stylesheet" href="css/wave-styles.css">
     <link rel="stylesheet" href="css/generic-styles.css">
     <link rel="stylesheet" href="css/input-styles.css">
+    <link rel="stylesheet" href="css/responsive-table.css">
     <link rel="stylesheet" href="css/custom-styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body onload="loadCookies()">
     <div class="header">
 
         <!--Content before waves-->
@@ -24,18 +25,24 @@
                     Unable to play, try again with other values
                 </div>
                 <span class="balloon-span">
-                    <input class="balloon b1" id="bet" type="number" placeholder="0.1" min="0.1" max="10" step="0.1"/><label for="bet">Bet</label>
+                    <input class="balloon b2" id="bank" type="number" placeholder="Bankroll" min="1" max="500"/><label for="bank">Bank</label>
                 </span>
                 <span class="balloon-span">
-                    <input class="balloon b2" id="wins" type="number" placeholder="10" min="1" max="500"/><label for="wins">Wins</label>
+                    <input class="balloon b1" id="bet" type="number" placeholder="Amount per bet" min="0.1" max="10" step="0.1"/><label for="bet">Bet</label>
                 </span>
                 <span class="balloon-span">
-                    <input class="balloon b3" id="double" type="number" placeholder="18" min="1" max="36"/><label for="double">Double every...</label>
+                    <input class="balloon b2" id="wins" type="number" placeholder="Number of wins goal" min="1" max="500"/><label for="wins">Wins</label>
                 </span>
                 <span class="balloon-span">
-                    <input class="balloon b3" id="chosen-number" type="number" placeholder="13" min="1" max="36"/><label for="chosen-number">Chosen number</label>
+                    <input class="balloon b3" id="double" type="number" placeholder="Amount of roll before doubling the bet" min="1" max="36"/><label for="double">Double every...</label>
                 </span>
-                <a class="button" onClick="playRouletteMultipleTimes()">PLAY</a>
+                <span class="balloon-span">
+                    <input class="balloon b3" id="concede" type="number" placeholder="Max roll before stopping" min="1" max="200"/><label for="concede">Concede at...</label>
+                </span>
+                <span class="balloon-span">
+                    <input class="balloon b3" id="chosen-number" type="number" placeholder="Chosen number on roulette" min="1" max="36"/><label for="chosen-number">Chosen number</label>
+                </span>
+                <a class="button" onClick="playRouletteMultipleTimes()"><span class="noselect">PLAY</span></a>
             </div>
             
 
@@ -43,7 +50,7 @@
         
 
         <!--Waves Container-->
-        <div>
+        <div class="waves-container">
 
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -59,11 +66,34 @@
             </svg>
 
 
-            <p class="bg-white m-0 p-8" id="result">Result will be here</p>
-            
+            <p class="bg-white m-0 p-8 noselect" id="result">Result will be here</p>
 
         </div>
         <!--Waves end-->
+
+        <div class="bg-white p-8">
+
+            <h2 class="statistics-title">Statistics</h2>
+
+            <div class="center">
+
+                <table class="rwd-table" id="table">
+                    <tr class="rwd-table-header">
+                        <th>Bank</th>
+                        <th>Bet</th>
+                        <th>Wins</th>
+                        <th>Double at</th>
+                        <th>Concede at</th>
+                        <th>Final bank</th>
+                        <th>Benefit</th>
+                        <th>Winrate</th>
+                    </tr>
+                    <tbody></tbody>
+                </table>
+
+            </div>
+
+        </div>
         
     </div>
 </body>

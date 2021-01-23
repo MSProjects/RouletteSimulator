@@ -35,7 +35,7 @@
     border-width: 1px;
     border-style: solid;
     padding: 10px 15px;
-    margin: 0 15px;
+    margin: 0 10px;
     display: none;
     font-family: "Lato", sans-serif;
 }
@@ -49,3 +49,19 @@
 .alert-visible {
     display: block;
 }
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+  }

@@ -60,6 +60,10 @@ p {
   background-color: white;
 }
 
+.waves-container {
+  margin-bottom: -5px;
+}
+
 /* Animation */
 
 .parallax > use {

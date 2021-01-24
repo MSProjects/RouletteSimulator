@@ -134,8 +134,8 @@ function checkInputs() {
     if (wins < 1 || wins > 5000) { displayAlert("Wins must be between 1 and 5000"); return; }
     if (double < 1 || double > 36) { displayAlert("Double must be between 1 and 36"); return; }
     if (chosenNumber < 1 || chosenNumber > 36) { displayAlert("Chosen number must be between 1 and 36"); return; }
-    if (bank < 0.1 || bank > 500) { displayAlert("Bet must be between 0.1 and 500"); return; }
-    if (concede < 1 || concede > 200) { displayAlert("Bet must be between 1 and 200"); return; }
+    if (bank < 0.1 || bank > 20000) { displayAlert("Bank must be between 0.1 and 20000"); return; }
+    if (concede < 1 || concede > 500) { displayAlert("Condede must be between 1 and 500"); return; }
 
     setCookie("bet",bet,30);
     setCookie("wins",wins,30);
@@ -198,8 +198,7 @@ function loadCookies() {
 
 }
 
-
-function listStatistics( ) { // nl -> NodeList, data -> array with objects
+function listStatistics() {
 
     var formdata = new FormData();
     formdata.append("query", "ListStatistics");
@@ -214,9 +213,9 @@ function listStatistics( ) { // nl -> NodeList, data -> array with objects
     .then(response => response.text())
     .then(result => {
         let statistics = JSON.parse(result);
-        console.log(statistics);
-        var table = document.querySelector("#table tbody");
-    
+        var table = document.querySelector("#table .tbody");
+        table.innerHTML = "";
+
         for (var i = 0; i < statistics.length; i++) {
             var row = `<tr>
                             <td data-th="Bank">${statistics[i].bank} &euro;</td>
@@ -231,8 +230,6 @@ function listStatistics( ) { // nl -> NodeList, data -> array with objects
             table.innerHTML += row;
         }
     })
-    .catch(error => console.log('error', error));
-
 
   }
   
